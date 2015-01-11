@@ -9,6 +9,18 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Pivot Title="Calculator">
+            <PivotItem Header="Calculator C#">
+                <Grid>
+                    <local:CsCalculatorUI/>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Calculator C++">
+                <Grid>
+                    <local:CppCalculatorUI/>
+                </Grid>
+            </PivotItem>
+        </Pivot>
 
     </Grid>
 </Page>

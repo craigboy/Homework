@@ -12,6 +12,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Calculator;
+using CalculatorCpp;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -22,11 +24,13 @@ namespace Calculator
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+        
         public MainPage()
         {
             this.InitializeComponent();
-
             this.NavigationCacheMode = NavigationCacheMode.Required;
+
         }
 
         /// <summary>
@@ -44,5 +48,6 @@ namespace Calculator
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
         }
+
     }
 }
