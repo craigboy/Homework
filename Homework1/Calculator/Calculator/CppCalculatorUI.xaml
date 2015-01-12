@@ -7,19 +7,20 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     d:DesignHeight="500"
-    d:DesignWidth="400">
+    d:DesignWidth="361">
 
     <Grid Background="{ThemeResource PhoneBackgroundBrush}">
-        <TextBox x:Name="AddText" HorizontalAlignment="Left" Margin="0,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" InputScope="Number"/>
-        <TextBox x:Name="SubtractText" HorizontalAlignment="Left" Margin="0,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" InputScope="Number"/>
-        <TextBox x:Name="MultiplyText" HorizontalAlignment="Left" Margin="0,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" InputScope="Number"/>
-        <TextBox x:Name="DivideText" HorizontalAlignment="Left" Margin="0,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" InputScope="Number"/>
-        <Button x:Name="Divide" Content="Divide" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,229,0,0" Click="Divide_Click"/>
-        <Button x:Name="Multiply" Content="Multiply" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,148,0,0" Click="Multiply_Click"/>
-        <Button x:Name="Subtract" Content="Subtract" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,71,0,0" Click="Subtract_Click"/>
-        <Button x:Name="Add" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0" Click="Add_Click"/>
+        <TextBox x:Name="AddText" PlaceholderText="0" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" InputScope="Number" Width="200"/>
+        <TextBox x:Name="SubtractText" PlaceholderText="0" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" InputScope="Number" Width="200"/>
+        <TextBox x:Name="MultiplyText" PlaceholderText="0" HorizontalAlignment="Left" Margin="0,150,0,0" VerticalAlignment="Top" InputScope="Number" Width="200"/>
+        <TextBox x:Name="DivideText" PlaceholderText="0" HorizontalAlignment="Left" Margin="0,220,0,0" VerticalAlignment="Top" InputScope="Number" Width="200"/>
+        <Button x:Name="Divide" Content="Divide" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,211,0,0" Click="Divide_Click"/>
+        <Button x:Name="Multiply" Content="Multiply" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,141,0,0" Click="Multiply_Click"/>
+        <Button x:Name="Subtract" Content="Subtract" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,70,0,0" Click="Subtract_Click"/>
+        <Button x:Name="Add" Content="Add" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,1,0,0" Click="Add_Click"/>
 
-        <TextBlock x:Name="OutputText" HorizontalAlignment="Right" Text="0" VerticalAlignment="Bottom" Margin="0,0,0,20" Width="205" FontSize="24" TextAlignment="Right"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Output:" VerticalAlignment="Bottom" Margin="0,0,0,20" FontSize="24"/>
+        <TextBlock x:Name="OutputText" HorizontalAlignment="Right" Text="0" VerticalAlignment="Bottom" Margin="0,0,0,50" FontSize="24" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Text="Output:" VerticalAlignment="Bottom" Margin="0,0,0,50" FontSize="24"/>
+        <TextBlock x:Name="ErrorText" HorizontalAlignment="Center" Margin="0,332,0,0" VerticalAlignment="Top" Foreground="#FFF55106" FontSize="24"/>
     </Grid>
 </UserControl>

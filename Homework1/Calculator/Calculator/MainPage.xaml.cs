@@ -49,5 +49,10 @@ namespace Calculator
             // this event is handled for you.
         }
 
+        private void CppCalculatorUI_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

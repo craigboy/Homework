@@ -17,7 +17,7 @@
             </PivotItem>
             <PivotItem Header="Calculator C++">
                 <Grid>
-                    <local:CppCalculatorUI/>
+                    <local:CppCalculatorUI Loaded="CppCalculatorUI_Loaded"/>
                 </Grid>
             </PivotItem>
         </Pivot>

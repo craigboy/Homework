@@ -36,15 +36,7 @@ namespace Calculator
 
         public void divide(double value)
         {
-            if (value == 0)
-            {
-                //do nothing
-            }
-            else
-            {
-                this.OutputValue /= value;
-            }
-            
+                this.OutputValue /= value;            
         }
     }
 }

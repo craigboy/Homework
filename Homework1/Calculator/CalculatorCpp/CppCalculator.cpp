@@ -27,14 +27,8 @@ void CppCalculator::multiply(double value)
 
 void CppCalculator::divide(double value)
 {
-	if (value == 0)
-	{
-		//do nothing
-	}
-	else
-	{
-		outputValue /= value;
-	}
+	outputValue /= value;
+
 }
 
 double CppCalculator::getOutputValue()

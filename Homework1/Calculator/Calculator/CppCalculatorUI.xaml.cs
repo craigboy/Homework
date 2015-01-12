@@ -33,28 +33,59 @@ namespace Calculator
             double value = 0;
             if (double.TryParse(AddText.Text, out value))
             {
-                cppCalculator.add(Convert.ToDouble(AddText.Text));
+                cppCalculator.add(value);
                 updateOutput();
+                ErrorText.Text = "";
+            }
+            else
+            {
+                ErrorText.Text = "Invalid Input";
             }
         }
 
         private void Subtract_Click(object sender, RoutedEventArgs e)
         {
-            cppCalculator.subtract(Convert.ToDouble(SubtractText.Text));
-            updateOutput();
+            double value = 0;
+            if (double.TryParse(SubtractText.Text, out value))
+            {
+                cppCalculator.subtract(value);
+                updateOutput();
+                ErrorText.Text = "";
+            }
+            else
+            {
+                ErrorText.Text = "Invalid Input";
+            }
         }
 
         private void Multiply_Click(object sender, RoutedEventArgs e)
         {
-            cppCalculator.multiply(Convert.ToDouble(MultiplyText.Text));
-            updateOutput();
+            double value = 0;
+            if (double.TryParse(MultiplyText.Text, out value))
+            {
+                cppCalculator.multiply(value);
+                updateOutput();
+                ErrorText.Text = "";
+            }
+            else
+            {
+                ErrorText.Text = "Invalid Input";
+            }
         }
 
         private void Divide_Click(object sender, RoutedEventArgs e)
         {
-            // Check for divide by 0 done within cpp method
-            cppCalculator.divide(Convert.ToDouble(DivideText.Text));
-            updateOutput();
+            double value = 0;
+            if (double.TryParse(DivideText.Text, out value) && value != 0)
+            {
+                cppCalculator.divide(value);
+                updateOutput();
+                ErrorText.Text = "";
+            }
+            else
+            {
+                ErrorText.Text = "Invalid Input";
+            }
         }
 
         private void updateOutput()
