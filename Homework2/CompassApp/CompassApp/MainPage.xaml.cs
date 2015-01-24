@@ -7,13 +7,9 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
 namespace CompassApp
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
         private Sensors mySensors;
@@ -31,15 +27,11 @@ namespace CompassApp
 
         }
 
-        /// <summary>
-        /// Invoked when this page is about to be displayed in a Frame.
-        /// </summary>
-        /// <param name="e">Event data that describes how this page was reached.
-        /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             this.mySensors.ReadingChanged += async (bool accelerometer, bool compass) =>
             {
+                //Use dispatcher to change UI
                 await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                 {
 
@@ -61,6 +53,7 @@ namespace CompassApp
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
+            //disable the start button after pressed so that the event token does not change and prevent not being able to unregister from event
             this.mySensors.startMonitoringSensors();
             this.StartButton.IsEnabled = false;
             this.StopButton.IsEnabled = true;
@@ -73,8 +66,5 @@ namespace CompassApp
             this.StartButton.IsEnabled = true;
             this.StopButton.IsEnabled = false;
         }
-
-        
-
     }
 }

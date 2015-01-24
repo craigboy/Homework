@@ -13,13 +13,15 @@ namespace CppSensors
 		Compass ^compass;
 		bool accelInRange;
 		bool compassInRange;
+
+		//registration tokens so we can unregester from an event
 		EventRegistrationToken accToken;
 		EventRegistrationToken compassToken;
 
-		
-
 		// Internal function that gets called by the Accelerometer thread when it has a new reading for us
 		void onAccelChanged(Accelerometer ^sender, AccelerometerReadingChangedEventArgs ^args);
+
+		// Internal function that gets called by the Compass thread when it has a new reading for us
 		void onCompassChanged(Compass ^sender, CompassReadingChangedEventArgs ^args);
 		void NotifyReadingChanged();
 
@@ -27,7 +29,7 @@ namespace CppSensors
 		Sensors();
 		virtual ~Sensors();
 
-		// Event that we trigger when we have a new reading
+		// Event that we trigger when we have a status change
 		event sensorsChangedEvent^ ReadingChanged;
 
 		void startMonitoringSensors();

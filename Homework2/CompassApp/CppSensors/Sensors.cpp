@@ -31,7 +31,7 @@ void Sensors::startMonitoringSensors()
 
 void Sensors::stopMonitoringSensors()
 {
-
+	//unregister from event
 	this->accel->ReadingChanged -= accToken;
 	this->compass->ReadingChanged -= compassToken;
 
@@ -41,12 +41,13 @@ void Sensors::onAccelChanged(Accelerometer ^sender, AccelerometerReadingChangedE
 {
 	bool isInRange = false;
 
-	if (abs(args->Reading->AccelerationX) < 0.2 && abs(args->Reading->AccelerationY) < 0.2 && args->Reading->AccelerationZ <= -0.95)
+	// logic to determine if the Accelerometer is in range
+	if (abs(args->Reading->AccelerationX) < 0.2 && abs(args->Reading->AccelerationY) < 0.2 && args->Reading->AccelerationZ <= -0.9 && args->Reading->AccelerationZ >= -1.1)
 	{
 		isInRange = true;
 	}
 
-	// logic to determine if the sensors are in range
+	//check for changed state - notify only on change
 	if (isInRange != this->accelInRange)
 	{
 		this->accelInRange = isInRange;
@@ -59,11 +60,13 @@ void Sensors::onCompassChanged(Compass ^sender, CompassReadingChangedEventArgs ^
 {
 	bool isInRange = false;
 
+	// logic to determine if the Compass is in range - Chose +/- 5 degrees from True North
 	if (args->Reading->HeadingTrueNorth->Value <= 5 || args->Reading->HeadingTrueNorth->Value >= 355)
 	{
 		isInRange = true;
 	}
 
+	//check for changed state - notify only on change
 	if (isInRange != this->compassInRange)
 	{
 		this->compassInRange = isInRange;
